@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hola jejejeje</title>
+
+  <!-- Google Fonts: única dependencia externa -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Nuestro diseño -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bloqueado">
+
+  <!-- ============================================ -->
+  <!-- SECCIÓN 1: LA INVITACIÓN                     -->
+  <!-- ============================================ -->
+  <section id="invitacion">
+    <div class="particulas" id="particulas-invitacion"></div>
+
+    <!-- El saludo ("Buenas tardes...") lo escribe JavaScript -->
+    <p class="saludo-hora" id="saludo-hora"></p>
+
+    <div class="sobre" id="sobre">
+      <div class="sobre-carta"></div>
+      <div class="sobre-fondo"></div>
+      <div class="sobre-solapa"></div>
+      <div class="sobre-frente"></div>
+      <div class="sello" aria-hidden="true">♥</div>
+    </div>
+
+    <h1 class="invitacion-nombre">Mi vida</h1>
+    <p class="invitacion-frase">Tengo algo muy importante que decirte</p>
+
+    <button class="boton" id="btn-abrir" type="button">Abrir</button>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- CONTENIDO PRINCIPAL (oculto hasta abrir)     -->
+  <!-- ============================================ -->
+  <main id="contenido" class="oculto">
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 2: HOY ES TU DÍA                   -->
+    <!-- ========================================== -->
+    <section id="hoy" class="seccion seccion-hoy">
+      <div class="lluvia-petalos" id="petalos-hoy"></div>
+
+      <!-- Flores decorativas (las dibujaremos con CSS en la Etapa 4) -->
+      <svg class="flor flor-izquierda" viewBox="0 0 200 200" aria-hidden="true">
+        <path class="trazo" d="M10 190 C 50 140, 60 90, 110 60" />
+        <path class="trazo" d="M110 60 C 90 40, 110 20, 125 38 C 145 20, 160 45, 140 62 C 155 80, 125 90, 110 60 Z" />
+      </svg>
+      <svg class="flor flor-derecha" viewBox="0 0 200 200" aria-hidden="true">
+        <path class="trazo" d="M190 190 C 150 140, 140 90, 90 60" />
+        <path class="trazo" d="M90 60 C 110 40, 90 20, 75 38 C 55 20, 40 45, 60 62 C 45 80, 75 90, 90 60 Z" />
+      </svg>
+
+      <div class="contenedor centrado">
+        <!-- Contador inteligente (lo calcula JavaScript) -->
+        <p class="contador" id="contador">&nbsp;</p>
+
+        <h2 class="titulo-grande" id="titulo-hoy">
+          <span class="palabra">¡Feliz</span>
+          <span class="palabra">cumpleaños,</span>
+          <span class="palabra manuscrito">Mi flaquita hermosa!</span>
+        </h2>
+
+        <div class="linea-dorada"></div>
+
+        <!-- ✏️ EDITA ESTA FRASE: es provisional -->
+        <p class="frase-hoy">
+          Infinitamente feliz de celebrar este día contigo. Gracias por ser la persona maravillosa que eres y por llenar mi vida de amor y alegría. ¡Te amo con todo mi corazón!
+        </p>
+      </div>
+
+      <a href="#recuerdos" class="indicador-scroll" aria-label="Ir a los recuerdos">
+        <span>Desliza</span>
+        <span class="flecha">↓</span>
+      </a>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 3: NUESTROS RECUERDOS              -->
+    <!-- ========================================== -->
+    <section id="recuerdos" class="seccion seccion-recuerdos">
+      <div class="contenedor">
+        <header class="encabezado-seccion">
+          <p class="subtitulo manuscrito">Un álbum para ti de momentos increíbles juntos</p>
+          <h2 class="titulo-seccion">Una pista (toca las imágenes)</h2>
+          <div class="linea-dorada"></div>
+        </header>
+
+        <!-- JavaScript llena este contenedor con las fotos
+             registradas en la lista de js/script.js -->
+        <div class="galeria" id="galeria"></div>
+      </div>
+    </section>
+
+    <!-- Ventana para ampliar fotos -->
+    <div class="visor" id="visor" aria-hidden="true">
+      <button class="visor-cerrar" id="visor-cerrar" type="button" aria-label="Cerrar">✕</button>
+      <button class="visor-nav visor-anterior" id="visor-anterior" type="button" aria-label="Foto anterior">‹</button>
+      <figure class="visor-figura">
+        <img id="visor-img" src="" alt="">
+        <figcaption id="visor-texto"></figcaption>
+      </figure>
+      <button class="visor-nav visor-siguiente" id="visor-siguiente" type="button" aria-label="Foto siguiente">›</button>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 4: ALGO QUE QUIERO DECIRTE         -->
+    <!-- ========================================== -->
+
+    <section id="carta" class="seccion seccion-carta">
+  <div class="contenedor">
+    <header class="encabezado-seccion">
+      <p class="subtitulo manuscrito">Con todo mi cariño</p>
+      <h2 class="titulo-seccion">Algo que quiero decirte</h2>
+    </header>
+
+    <article class="carta" id="carta-hoja">
+      <p class="carta-saludo manuscrito">Mi vida,</p>
+
+      <p class="carta-parrafo">
+        Gracias por permitirme ser parte de tu vida y compartir momentos increíbles y especiales juntos.
+      </p>
+
+      <p class="carta-parrafo">
+        Por ser siempre mi soporte en mis momentos de crisis.
+      </p>
+
+      <p class="carta-parrafo">
+        Hoy en tu día y siempre, le pido a Dios que siempre te proteja y te bendiga.
+      </p>
+
+      <p class="carta-firma manuscrito">Favio</p>
+    </article>
+  </div>
+</section>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 5: DESEOS PARA TI                  -->
+    <!-- ========================================== -->
+    <section id="deseos" class="seccion seccion-deseos">
+      <div class="contenedor">
+        <header class="encabezado-seccion">
+          <p class="subtitulo manuscrito">Para tu nuevo año de vida</p>
+          <h2 class="titulo-seccion">Deseos para ti</h2>
+          <div class="linea-dorada"></div>
+        </header>
+
+        <!-- ✏️ EDITA ESTOS DESEOS: cada <li> es un deseo.
+             Copia y pega una línea para añadir más, o bórrala para quitar. -->
+        <ul class="lista-deseos">
+          <li class="deseo">Logra todas tus metas y deseos</li>
+          <li class="deseo">Sigue bailando igual de hermoso que siempre</li>
+          <li class="deseo">Sigue siendo la persona increíble que eres</li>
+          <li class="deseo">Sé la mejor fisio de todas, aunque para mí, ya lo eres</li>
+          <li class="deseo">sigue siendo la mejor profe del ballet</li>
+          <li class="deseo">Nunca dejes que los malos comentarios de las personas te afecten</li>
+        </ul>
+
+        <!-- Foto sorpresa escondida: aparece al tocar el destello ✦ -->
+        <button class="destello-secreto" id="destello-secreto" type="button" aria-label="Descubrir una sorpresa">✦</button>
+
+        <div class="foto-sorpresa" id="foto-sorpresa" aria-hidden="true">
+          <figure class="polaroid">
+            <!-- ✏️ Guarda tu foto sorpresa como img/galeria/sorpresa.jpg -->
+            <img src="img/galeria/30.jpeg" alt="Foto sorpresa" loading="lazy">
+            <figcaption class="manuscrito">Un mensajito de nuestra hija de cuatro patas</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN 6: UNA ÚLTIMA SORPRESA             -->
+    <!-- ========================================== -->
+    <section id="sorpresa" class="seccion seccion-sorpresa">
+      <div class="lluvia-petalos" id="petalos-final"></div>
+
+      <div class="contenedor centrado">
+        <p class="subtitulo manuscrito" id="sorpresa-intro">Casi llegamos al final...</p>
+
+        <button class="boton boton-grande" id="btn-sorpresa" type="button">Una última sorpresa</button>
+
+        <!-- Esto está oculto hasta pulsar el botón -->
+        <div class="dedicatoria" id="dedicatoria" aria-hidden="true">
+          <!-- ✏️ EDITA ESTA DEDICATORIA: es provisional -->
+          <p class="dedicatoria-texto manuscrito" id="dedicatoria-texto">" Al final resultó ser cierto: Un hombre solo ama profundamente a una mujer una vez en la vida. Yo no lo creía, hasta que te conocí "</p>
+          <div class="linea-dorada"></div>
+          <p class="frase-cierre">Y ahora, con cada día que pasa, me doy cuenta de lo afortunado que soy de tenerte en mi vida. Feliz cumpleaños, mi pedacito de felicidad</p>
+          <button class="boton boton-suave" id="btn-reiniciar" type="button">Volver a empezar</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================ -->
+  <!-- MÚSICA                                       -->
+  <!-- ============================================ -->
+  <!-- preload="none": no descarga nada hasta que se pulse play -->
+  <audio id="musica" src="audio/nunca.mp3" loop preload="none"></audio>
+  <audio id="musica-foto" loop preload="none"></audio>
+  <button class="boton-musica oculto" id="btn-musica" type="button" aria-label="Reproducir o pausar la música">
+    <span id="icono-musica">♪</span>
+  </button>
+
+  <!-- Nuestro comportamiento (siempre al final, con defer) -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
